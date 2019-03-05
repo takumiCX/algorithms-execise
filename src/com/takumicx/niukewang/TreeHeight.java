@@ -3,9 +3,7 @@ package com.takumicx.niukewang;
 import java.util.Scanner;
 
 public class TreeHeight {
-	
-	
-	
+
 	static int[] nodes=new int[1001];
 	
 	static int[] children=new int[1001];

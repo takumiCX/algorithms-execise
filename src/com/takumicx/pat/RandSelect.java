@@ -38,7 +38,7 @@ public class RandSelect {
 			
 			System.out.print(a[i]+" ");
 		}
-		int select = randSelect(a, 0, a.length-1, 15);
+		int select = randSelect(a, 0, a.length-1, 5);
 		
 		System.out.println();
 		
