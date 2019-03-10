@@ -1,5 +1,8 @@
 package com.takumicx;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -19,6 +22,7 @@ public class DP {
         }
         int a=dp(arr,arr.length-1);
         System.out.println(a);
+
 
     }
 

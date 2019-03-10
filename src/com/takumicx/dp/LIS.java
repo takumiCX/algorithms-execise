@@ -20,12 +20,31 @@ public class LIS {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int[] arr = new int[7];
-        for(int i=0;i<arr.length;i++){
-            arr[i]=scanner.nextInt();
+        String[] split = scanner.nextLine().split("\\s+");
+        int[] arr = new int[split.length];
+        for(int i=0;i<split.length;i++){
+            arr[i]=Integer.valueOf(split[i]);
         }
-        List<Integer> list=dp2(arr);
-        System.out.println(list);
+        int[] dp = new int[arr.length];
+        dp[0]=arr[0];
+        int max=-Integer.MAX_VALUE;
+        for(int i=1;i<arr.length;i++){
+            dp[i]=arr[i];
+            for(int j=0;j<i;j++){
+                if(arr[i]>=arr[j]&&dp[j]+arr[i]>dp[i]){
+                    dp[i]=dp[j]+arr[i];
+                    if(dp[i]>max) max=dp[i];
+                }
+            }
+        }
+        System.out.println(max);
+//        Scanner scanner = new Scanner(System.in);
+//        int[] arr = new int[7];
+//        for(int i=0;i<arr.length;i++){
+//            arr[i]=scanner.nextInt();
+//        }
+//        List<Integer> list=dp2(arr);
+//        System.out.println(list);
 
     }
 

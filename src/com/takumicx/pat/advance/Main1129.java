@@ -92,11 +92,7 @@ public class Main1129 {
 		// TODO Auto-generated method stub
 		if (node.count > node2.count) {
 			return true;
-		} else if (node.count == node2.count && node.index < node2.index) {
-			return true;
-		} else {
-			return false;
-		}
+		} else return node.count == node2.count && node.index < node2.index;
 	}
 
 

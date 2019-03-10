@@ -6,6 +6,7 @@ package com.takumicx.dp;
  * @email: takumicx@zju.edu.cn
  **/
 
+
 import java.util.Scanner;
 
 /**
@@ -21,9 +22,26 @@ public class LCS {
         Scanner scanner = new Scanner(System.in);
         String s1 = scanner.nextLine();
         String s2 = scanner.nextLine();
-//        int d=dp1(s1,s2);
-        int d=dp2(s1,s2);
-        System.out.println(d);
+        int[][] dp = new int[s1.length() + 1][s2.length() + 1];
+        int max=-Integer.MAX_VALUE;
+        for(int i=1;i<=s1.length();i++){
+            for(int j=1;j<=s2.length();j++){
+                if(s1.charAt(i-1)==s2.charAt(j-1)){
+                    dp[i][j]=dp[i-1][j-1]+1;
+                }else {
+                    dp[i][j]=Math.max(dp[i-1][j],dp[i][j-1]);
+                }
+                if(dp[i][j]>max) max=dp[i][j];
+
+            }
+        }
+        System.out.println(max);
+//        Scanner scanner = new Scanner(System.in);
+//        String s1 = scanner.nextLine();
+//        String s2 = scanner.nextLine();
+////        int d=dp1(s1,s2);
+//        int d=dp2(s1,s2);
+//        System.out.println(d);
 
     }
 

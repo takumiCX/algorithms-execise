@@ -38,7 +38,6 @@ public class Main026 {
                 }else {
                     System.out.print(iterator.next());
                 }
-                ;
             }
             System.out.println();
         }

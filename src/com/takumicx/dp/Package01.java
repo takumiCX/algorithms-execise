@@ -10,9 +10,9 @@ import java.util.Scanner;
 
 /**
  * 01背包问题
- * eg:   5 8
- * 3 5 1 2 2
- * 4 5 2 1 3
+ * eg:  n:5  W:8
+ * w:3 5 1 2 2
+ * v:4 5 2 1 3
  */
 public class Package01 {
 
@@ -24,24 +24,46 @@ public class Package01 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int v = scanner.nextInt();
-        weight = new int[n + 1];
-        value = new int[n + 1];
-
-        for (int i = 1; i <= n; i++) {
-            weight[i] = scanner.nextInt();
+        int num = scanner.nextInt();
+        int W = scanner.nextInt();
+        int[] w = new int[num + 1];
+        int[] v = new int[num + 1];
+        for (int i = 1; i <= num; i++) {
+            w[i] = scanner.nextInt();
         }
-        for (int i = 1; i <= n; i++) {
-            value[i] = scanner.nextInt();
+        for (int i = 1; i <= num; i++) {
+            v[i] = scanner.nextInt();
+        }
+        int[][] dp = new int[num + 1][W + 1];
+        for (int i = 1; i <= num; i++) {
+            for (int vv = w[i]; vv <= W; vv++) {
+                dp[i][vv] = Math.max(dp[i - 1][vv], dp[i - 1][vv - w[i]] + v[i]);
+            }
         }
 
-        dp = new int[n + 1];
+        System.out.println(dp[num][W]);
 
-        int d = dp(n, v);
 
-        System.out.println(d);
-
+//
+//        Scanner scanner = new Scanner(System.in);
+//        int n = scanner.nextInt();
+//        int v = scanner.nextInt();
+//        weight = new int[n + 1];
+//        value = new int[n + 1];
+//
+//        for (int i = 1; i <= n; i++) {
+//            weight[i] = scanner.nextInt();
+//        }
+//        for (int i = 1; i <= n; i++) {
+//            value[i] = scanner.nextInt();
+//        }
+//
+//        dp = new int[n + 1];
+//
+////        int d = dp(n, v);
+//
+////        System.out.println(d);
+//
 //        int[][] dp = new int[n + 1][v+1];
 //        for(int j=0;j<=n;j++){
 //            dp[0][j]=0;
@@ -56,17 +78,17 @@ public class Package01 {
 
     }
 
-    //01背包的递归写法
-    private static int dp(int n, int v) {
-
-        if (n == 0) return 0;
-        if (v < weight[n]) {
-            dp[n]=dp(n-1,v);
-        } else {
-            dp[n] = Math.max(dp(n - 1, v), dp(n - 1, v - weight[n]) + value[n]);
-        }
-        return dp[n];
-    }
+//    //01背包的递归写法
+//    private static int dp(int n, int v) {
+//
+//        if (n == 0) return 0;
+//        if (v < weight[n]) {
+//            dp[n] = dp(n - 1, v);
+//        } else {
+//            dp[n] = Math.max(dp(n - 1, v), dp(n - 1, v - weight[n]) + value[n]);
+//        }
+//        return dp[n];
+//    }
 
 //    private static int dp(int[] dp, int i, int v) {
 //        if(i==0) return 0;

@@ -43,9 +43,7 @@ public class RandSelect {
 		System.out.println();
 		
 		System.out.println(select);
-		
-		
-		
+
 	}
 	
 	

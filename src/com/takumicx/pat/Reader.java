@@ -11,7 +11,7 @@ class Reader {
 	static BufferedReader reader;
 	static StringTokenizer tokenizer;
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		
 		System.out.format("%.1f", 1.1555);
 		

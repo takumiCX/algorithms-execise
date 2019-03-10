@@ -8,7 +8,7 @@ public class Main1040 {
 	static String s;
 
 	@SuppressWarnings("resource")
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
 		s = scanner.nextLine();

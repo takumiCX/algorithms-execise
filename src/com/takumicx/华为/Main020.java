@@ -52,8 +52,7 @@ public class Main020 {
         for (int i = 0; i < flag.length; i++) {
             if (flag[i]) count++;
         }
-        if (count >= 3) return true;
-        return false;
+        return count >= 3;
     }
 
     private static boolean fun1(String s) {

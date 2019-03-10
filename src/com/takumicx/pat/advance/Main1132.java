@@ -25,7 +25,7 @@ public class Main1132 {
 
 				int d2 = k / (m * n);
 
-				flag = d == d2 ? true : false;
+				flag = d == d2;
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				flag=false;

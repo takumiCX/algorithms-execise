@@ -47,11 +47,8 @@ public class Main1135 {
 		}
 		int leftBlackNum = getBlackNum(root.left);
 		int rightBlackNum = getBlackNum(root.right);
-		if (leftBlackNum != rightBlackNum) {
-			return false;
-		}
-		return true;
-	}
+        return leftBlackNum == rightBlackNum;
+    }
 
 	private static int getBlackNum(Node root) {
 		// TODO Auto-generated method stub

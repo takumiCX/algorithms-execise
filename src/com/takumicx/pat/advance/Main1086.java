@@ -25,7 +25,7 @@ public class Main1086 {
 	static StringBuilder res=new StringBuilder();
 	
 	@SuppressWarnings("resource")
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		
 		 num = Integer.valueOf(scanner.nextLine().trim());
 		 
